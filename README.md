@@ -18,10 +18,11 @@ dataset with paired polysomnography and wrist accelerometry".
 | **NSRR** | Public list / DUA for data | Sleep studies (PSG, actigraphy) |
 | **HuggingFace** | Public API | ML-ready datasets on the Hub, incl. biosignal collections |
 | **OpenNeuro** | Public GraphQL API | BIDS neuroimaging/electrophysiology (EEG, MEG, fMRI) with subject counts |
+| **Kaggle** | Public API | Community datasets, filtered to biosignal/medical ones (see Design notes) |
 
-The architecture is connector-based — adding IEEE DataPort, Mendeley, Kaggle,
-etc. is a single new file in `src/med_dataset_mcp/connectors/` plus one line in the
-registry. (Mendeley and Kaggle need OAuth/API keys, so they're deferred.)
+The architecture is connector-based — adding IEEE DataPort, Mendeley, etc. is a
+single new file in `src/med_dataset_mcp/connectors/` plus one line in the
+registry. (Mendeley needs OAuth, so it's deferred.)
 
 ## Tools
 
@@ -79,6 +80,9 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 - **Modality inference:** sources rarely expose structured modality fields, so
   modalities are inferred from titles/descriptions with boundary-aware keyword
   matching (avoids false positives like "stimulation" → IMU).
+- **Kaggle biosignal floor:** Kaggle search is noisy, so its connector drops any
+  result with no detected biosignal/medical modality. This keeps EEG/ECG/PSG
+  datasets while filtering out generic, name-only matches.
 - **TLS:** uses the OS trust store via `truststore` so sources that omit
   intermediate certs (e.g. NSRR) verify correctly.
 
@@ -98,5 +102,6 @@ src/med_dataset_mcp/
     nsrr.py
     huggingface.py
     openneuro.py
+    kaggle.py
 tests/
 ```

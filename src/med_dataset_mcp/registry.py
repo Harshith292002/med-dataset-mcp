@@ -12,6 +12,7 @@ import truststore
 from med_dataset_mcp.cache import TTLCache
 from med_dataset_mcp.connectors.base import Connector
 from med_dataset_mcp.connectors.huggingface import HuggingFaceConnector
+from med_dataset_mcp.connectors.kaggle import KaggleConnector
 from med_dataset_mcp.connectors.nsrr import NSRRConnector
 from med_dataset_mcp.connectors.openneuro import OpenNeuroConnector
 from med_dataset_mcp.connectors.physionet import PhysioNetConnector
@@ -27,6 +28,7 @@ _CONNECTOR_CLASSES: list[type[Connector]] = [
     NSRRConnector,
     HuggingFaceConnector,
     OpenNeuroConnector,
+    KaggleConnector,
 ]
 
 
