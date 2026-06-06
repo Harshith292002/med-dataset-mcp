@@ -6,7 +6,7 @@ import abc
 
 import httpx
 
-from med_mcp.schema import DatasetRecord
+from med_dataset_mcp.schema import DatasetRecord
 
 
 class Connector(abc.ABC):

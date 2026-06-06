@@ -1,7 +1,7 @@
 import pytest
 
-from med_mcp.registry import Registry
-from med_mcp.schema import DatasetRecord
+from med_dataset_mcp.registry import Registry
+from med_dataset_mcp.schema import DatasetRecord
 
 
 class _FakeConnector:

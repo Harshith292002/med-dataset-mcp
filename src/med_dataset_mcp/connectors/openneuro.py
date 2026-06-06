@@ -8,9 +8,9 @@ counts, so we use those directly instead of inferring from text.
 
 from __future__ import annotations
 
-from med_mcp.connectors.base import Connector
-from med_mcp.modalities import normalize_modality
-from med_mcp.schema import DatasetRecord
+from med_dataset_mcp.connectors.base import Connector
+from med_dataset_mcp.modalities import normalize_modality
+from med_dataset_mcp.schema import DatasetRecord
 
 _GRAPHQL = "https://openneuro.org/crn/graphql"
 _WEB = "https://openneuro.org/datasets/{id}"

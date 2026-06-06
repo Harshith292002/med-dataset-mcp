@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from med_mcp.connectors.base import Connector
-from med_mcp.modalities import detect_modalities
-from med_mcp.schema import DatasetRecord
+from med_dataset_mcp.connectors.base import Connector
+from med_dataset_mcp.modalities import detect_modalities
+from med_dataset_mcp.schema import DatasetRecord
 
 _API = "https://huggingface.co/api/datasets"
 _WEB = "https://huggingface.co/datasets/{id}"

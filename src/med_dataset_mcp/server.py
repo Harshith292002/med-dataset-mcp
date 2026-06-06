@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from mcp.server.fastmcp import FastMCP
 
-from med_mcp.modalities import known_modalities
-from med_mcp.registry import Registry
+from med_dataset_mcp.modalities import known_modalities
+from med_dataset_mcp.registry import Registry
 
 mcp = FastMCP("MedDataMCP")
 _registry = Registry()

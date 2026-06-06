@@ -11,9 +11,9 @@ from __future__ import annotations
 
 import re
 
-from med_mcp.connectors.base import Connector
-from med_mcp.modalities import detect_modalities
-from med_mcp.schema import DatasetRecord
+from med_dataset_mcp.connectors.base import Connector
+from med_dataset_mcp.modalities import detect_modalities
+from med_dataset_mcp.schema import DatasetRecord
 
 _DBS_URL = "https://physionet.org/physiobank/database/DBS"
 _CONTENT = "https://physionet.org/content/{slug}/"

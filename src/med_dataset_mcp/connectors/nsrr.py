@@ -11,9 +11,9 @@ from __future__ import annotations
 
 import os
 
-from med_mcp.connectors.base import Connector
-from med_mcp.modalities import detect_modalities
-from med_mcp.schema import DatasetRecord
+from med_dataset_mcp.connectors.base import Connector
+from med_dataset_mcp.modalities import detect_modalities
+from med_dataset_mcp.schema import DatasetRecord
 
 _LIST = "https://sleepdata.org/api/v1/datasets.json"
 _WEB = "https://sleepdata.org/datasets/{slug}"

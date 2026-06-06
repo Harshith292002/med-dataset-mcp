@@ -1,4 +1,4 @@
-from med_mcp.modalities import detect_modalities, normalize_modality
+from med_dataset_mcp.modalities import detect_modalities, normalize_modality
 
 
 def test_detects_psg_and_imu():

@@ -20,7 +20,7 @@ dataset with paired polysomnography and wrist accelerometry".
 | **OpenNeuro** | Public GraphQL API | BIDS neuroimaging/electrophysiology (EEG, MEG, fMRI) with subject counts |
 
 The architecture is connector-based — adding IEEE DataPort, Mendeley, Kaggle,
-etc. is a single new file in `src/med_mcp/connectors/` plus one line in the
+etc. is a single new file in `src/med_dataset_mcp/connectors/` plus one line in the
 registry. (Mendeley and Kaggle need OAuth/API keys, so they're deferred.)
 
 ## Tools
@@ -46,7 +46,7 @@ uv run pytest        # run the test suite
 ### Run the server
 
 ```bash
-uv run med-mcp
+uv run med-dataset-mcp
 ```
 
 ### Use with Claude Desktop
@@ -58,7 +58,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
   "mcpServers": {
     "med-data": {
       "command": "uv",
-      "args": ["--directory", "/absolute/path/to/med-mcp", "run", "med-mcp"]
+      "args": ["--directory", "/absolute/path/to/med-dataset-mcp", "run", "med-dataset-mcp"]
     }
   }
 }
@@ -85,7 +85,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 ## Project layout
 
 ```
-src/med_mcp/
+src/med_dataset_mcp/
   schema.py            # DatasetRecord (shared normalized model)
   modalities.py        # keyword-based modality detection
   cache.py             # in-memory TTL cache

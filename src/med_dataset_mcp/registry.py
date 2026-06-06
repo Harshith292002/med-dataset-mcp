@@ -9,17 +9,17 @@ import ssl
 import httpx
 import truststore
 
-from med_mcp.cache import TTLCache
-from med_mcp.connectors.base import Connector
-from med_mcp.connectors.huggingface import HuggingFaceConnector
-from med_mcp.connectors.nsrr import NSRRConnector
-from med_mcp.connectors.openneuro import OpenNeuroConnector
-from med_mcp.connectors.physionet import PhysioNetConnector
-from med_mcp.connectors.zenodo import ZenodoConnector
-from med_mcp.modalities import normalize_modality
-from med_mcp.schema import DatasetRecord
+from med_dataset_mcp.cache import TTLCache
+from med_dataset_mcp.connectors.base import Connector
+from med_dataset_mcp.connectors.huggingface import HuggingFaceConnector
+from med_dataset_mcp.connectors.nsrr import NSRRConnector
+from med_dataset_mcp.connectors.openneuro import OpenNeuroConnector
+from med_dataset_mcp.connectors.physionet import PhysioNetConnector
+from med_dataset_mcp.connectors.zenodo import ZenodoConnector
+from med_dataset_mcp.modalities import normalize_modality
+from med_dataset_mcp.schema import DatasetRecord
 
-logger = logging.getLogger("med_mcp")
+logger = logging.getLogger("med_dataset_mcp")
 
 _CONNECTOR_CLASSES: list[type[Connector]] = [
     ZenodoConnector,
@@ -45,7 +45,7 @@ class Registry:
             timeout=timeout,
             follow_redirects=True,
             verify=ssl_ctx,
-            headers={"User-Agent": "med-mcp/0.1 (dataset discovery)"},
+            headers={"User-Agent": "med-dataset-mcp/0.1 (dataset discovery)"},
         )
         self._cache = TTLCache(ttl_seconds)
         self.connectors: dict[str, Connector] = {

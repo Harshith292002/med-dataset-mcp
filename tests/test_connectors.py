@@ -1,7 +1,7 @@
 """Offline tests for connector response normalization (no network)."""
 
-from med_mcp.connectors.huggingface import HuggingFaceConnector
-from med_mcp.connectors.openneuro import OpenNeuroConnector
+from med_dataset_mcp.connectors.huggingface import HuggingFaceConnector
+from med_dataset_mcp.connectors.openneuro import OpenNeuroConnector
 
 
 def test_huggingface_to_record_parses_tags_and_license():
