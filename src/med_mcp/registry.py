@@ -11,7 +11,9 @@ import truststore
 
 from med_mcp.cache import TTLCache
 from med_mcp.connectors.base import Connector
+from med_mcp.connectors.huggingface import HuggingFaceConnector
 from med_mcp.connectors.nsrr import NSRRConnector
+from med_mcp.connectors.openneuro import OpenNeuroConnector
 from med_mcp.connectors.physionet import PhysioNetConnector
 from med_mcp.connectors.zenodo import ZenodoConnector
 from med_mcp.modalities import normalize_modality
@@ -23,6 +25,8 @@ _CONNECTOR_CLASSES: list[type[Connector]] = [
     ZenodoConnector,
     PhysioNetConnector,
     NSRRConnector,
+    HuggingFaceConnector,
+    OpenNeuroConnector,
 ]
 
 

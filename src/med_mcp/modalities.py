@@ -15,6 +15,9 @@ import re
 _MODALITY_SYNONYMS: dict[str, list[str]] = {
     "psg": ["psg", "polysomnograph", "polysomnogram", "sleep study"],
     "eeg": ["eeg", "electroencephalogra"],
+    "meg": ["meg", "magnetoencephalogra"],
+    "ieeg": ["ieeg", "intracranial eeg", "ecog", "electrocorticogra"],
+    "pet": ["pet scan", "positron emission"],
     "ecg": ["ecg", "ekg", "electrocardiogra"],
     "emg": ["emg", "electromyogra"],
     "eog": ["eog", "electrooculogra"],

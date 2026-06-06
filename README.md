@@ -16,10 +16,12 @@ dataset with paired polysomnography and wrist accelerometry".
 | **Zenodo** | Public API | Broad open-access research datasets |
 | **PhysioNet** | Public | Physiological signal databases (ECG, EEG, PSG) via the PhysioBank index |
 | **NSRR** | Public list / DUA for data | Sleep studies (PSG, actigraphy) |
+| **HuggingFace** | Public API | ML-ready datasets on the Hub, incl. biosignal collections |
+| **OpenNeuro** | Public GraphQL API | BIDS neuroimaging/electrophysiology (EEG, MEG, fMRI) with subject counts |
 
-The architecture is connector-based — adding HuggingFace, OpenNeuro, IEEE
-DataPort, etc. is a single new file in `src/med_mcp/connectors/` plus one line
-in the registry.
+The architecture is connector-based — adding IEEE DataPort, Mendeley, Kaggle,
+etc. is a single new file in `src/med_mcp/connectors/` plus one line in the
+registry. (Mendeley and Kaggle need OAuth/API keys, so they're deferred.)
 
 ## Tools
 
@@ -94,5 +96,7 @@ src/med_mcp/
     zenodo.py
     physionet.py
     nsrr.py
+    huggingface.py
+    openneuro.py
 tests/
 ```
